@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wje-gk-QOR">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Memo List View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="MemoListViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="iu7-Fs-TU7">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iu7-Fs-TU7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="I5G-Fi-y00"/>
+                            <constraint firstItem="iu7-Fs-TU7" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="btF-z0-zc0"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="iu7-Fs-TU7" secondAttribute="bottom" id="idW-CH-UsI"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iu7-Fs-TU7" secondAttribute="trailing" id="wf8-bw-xao"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LYr-Wg-8vB">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="qG1-VL-jHy">
+                            <connections>
+                                <action selector="buttonTapped:" destination="Y6W-OH-hqX" id="WLI-u9-AoS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="memoTableView" destination="iu7-Fs-TU7" id="sFr-Ei-9NN"/>
+                        <segue destination="pL5-PZ-9w5" kind="showDetail" id="7wq-oV-Bid"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="820.61068702290072" y="-27.464788732394368"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="gjf-aB-Mai">
+            <objects>
+                <viewController storyboardIdentifier="EditView" id="pL5-PZ-9w5" customClass="MemoEditViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f7A-gv-CZR">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZYC-S7-iZv">
+                                <rect key="frame" x="10" y="190.66666666666669" width="373" height="568.33333333333326"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="memoLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWa-Kn-Jnr">
+                                <rect key="frame" x="10" y="113" width="373" height="27.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                <color key="textColor" systemColor="viewFlipsideBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ivS-6A-ybd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZYC-S7-iZv" firstAttribute="top" secondItem="YWa-Kn-Jnr" secondAttribute="bottom" constant="50" id="AYe-UK-Rr0"/>
+                            <constraint firstItem="YWa-Kn-Jnr" firstAttribute="top" secondItem="ivS-6A-ybd" secondAttribute="top" constant="10" id="Kyt-Kk-u80"/>
+                            <constraint firstItem="YWa-Kn-Jnr" firstAttribute="leading" secondItem="ivS-6A-ybd" secondAttribute="leading" constant="10" id="QMg-eC-cRU"/>
+                            <constraint firstItem="ZYC-S7-iZv" firstAttribute="leading" secondItem="ivS-6A-ybd" secondAttribute="leading" constant="10" id="QUJ-Qa-asY"/>
+                            <constraint firstItem="ivS-6A-ybd" firstAttribute="bottom" secondItem="ZYC-S7-iZv" secondAttribute="bottom" constant="10" id="bwk-Hf-Uhq"/>
+                            <constraint firstItem="ivS-6A-ybd" firstAttribute="trailing" secondItem="YWa-Kn-Jnr" secondAttribute="trailing" constant="10" id="sa8-Xx-t9J"/>
+                            <constraint firstItem="ivS-6A-ybd" firstAttribute="trailing" secondItem="ZYC-S7-iZv" secondAttribute="trailing" constant="10" id="uHN-B1-UkW"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="WqQ-vO-W3l">
+                        <barButtonItem key="rightBarButtonItem" id="VKP-2p-AjX">
+                            <imageReference key="image" image="checkmark.square.fill" catalog="system" variableValue="0.40000000000000008"/>
+                            <connections>
+                                <action selector="tappedFinishButton:" destination="pL5-PZ-9w5" id="v6F-Lp-UC4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="editContentLabel" destination="ZYC-S7-iZv" id="Lyn-pl-uxQ"/>
+                        <outlet property="editTitleLabel" destination="YWa-Kn-Jnr" id="fnC-e2-HrA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jeN-dK-wfC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1725.9541984732823" y="-27.464788732394368"/>
+        </scene>
+        <!--메모-->
+        <scene sceneID="rMN-QJ-vnw">
+            <objects>
+                <navigationController title="메모" automaticallyAdjustsScrollViewInsets="NO" id="wje-gk-QOR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="REt-FM-TPl">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="gkL-2C-PmN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OFN-gP-5yD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-69" y="-27"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="checkmark.square.fill" catalog="system" width="128" height="114"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="viewFlipsideBackgroundColor">
+            <color red="0.12156862745098039" green="0.12941176470588237" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
