@@ -4,5 +4,5 @@ Objc CRUD작업 연습용 프로젝트
 
 ### 스택
 - MVC
-- Objective-C, Uikit 
+- Objective-C, Uikit, Storyboard
 - NSUserDefault
